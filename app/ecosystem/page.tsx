@@ -4,7 +4,7 @@ import USDCFunkyLogo from "@public/usdc_funky_logo.svg";
 export default function Ecosystem() {
     return (
         <div className="flex flex-col text-[#29233c] h-[90vh] mt-4 mx-24">
-            <h1 className="text-[3.25rem] font-extrabold my-4 mb-6">Circle's Ecosystem Offerings</h1>
+            <h1 className="text-[3.25rem] font-extrabold my-4 mb-6">Circle&apos;s Ecosystem Offerings</h1>
             <div className="flex gap-8">
             <div className="card text-[#29233c] shadow-xl rounded-none">
                 <figure className="px-10 pt-10">
