@@ -12,9 +12,9 @@ export default function Ecosystem() {
                 </figure>
                 <div className="card-body items-center text-center gap-4">
                     <h2 className="card-title text-[2rem] font-extrabold">The USDC Grants Program</h2>
-                    <p>Up to 100k in USDC for early-stage startups.</p>
+                    <p className="text-[1.25rem]">Up to 100k in USDC for early-stage startups.</p>
                     <div className="card-actions">
-                        <button className="btn btn-active text-white">See Grants</button>
+                        <button className="btn btn-active text-white text-[1rem]">See Grants</button>
                     </div>
                 </div>
             </div>
@@ -24,9 +24,9 @@ export default function Ecosystem() {
                 </figure>
                 <div className="card-body items-center text-center">
                 <h2 className="card-title text-[2rem] font-extrabold">Bounties</h2>
-                    <p>Excited for a developer challenge with a potential reward in USDC?</p>
+                    <p className="text-[1.25rem]">Excited for a developer challenge with rewards in USDC?</p>
                     <div className="card-actions">
-                        <button className="btn btn-active text-white">See Bounties</button>
+                        <button className="btn btn-active text-white text-[1rem]">See Bounties</button>
                     </div>
                 </div>
             </div>
