@@ -26,6 +26,7 @@ export default function Navbar() {
   <div className="navbar-center hidden lg:flex text-black text-base">
     <ul className="menu menu-horizontal px-1">
       <li onClick={() => router.push('/why-usdc/')}><Link href="/why-usdc/"><b>Why USDC?</b></Link></li>
+      <li onClick={() => router.push('/ecosystem/')}><Link href="/ecosystem/"><b>Ecosystem</b></Link></li>
       <li>
         <details>
           <summary><b>Developers</b></summary>
@@ -50,7 +51,7 @@ export default function Navbar() {
   </div>
   <div className="navbar-end mr-24 gap-x-1.5">
     <button className="btn btn-ghost text-black">Sign In</button>
-    <button className="btn btn-outline rounded text-black hover:bg-black hover:text-white">SIGN UP</button>
+    <button className="btn btn-active bg-[#363049] rounded text-white hover:bg-white hover:text-black">SIGN UP</button>
   </div>
 </div>
   )
