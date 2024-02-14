@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
 <div className="navbar py-3 gradient-gumdrop-frosting sticky">
-  <div className="navbar-start ml-24">
+  <div className="navbar-start ml-4 md:ml-24">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <Link href="/" className="hover:cursor-pointer">
@@ -49,7 +49,7 @@ export default function Navbar() {
       </li>
     </ul>
   </div>
-  <div className="navbar-end mr-24 gap-x-1.5">
+  <div className="navbar-end mr-4 md:mr-24 gap-x-1.5">
     <button className="btn btn-ghost text-black">Sign In</button>
     <button className="btn btn-active bg-[#363049] rounded text-white hover:bg-white hover:text-black">SIGN UP</button>
   </div>

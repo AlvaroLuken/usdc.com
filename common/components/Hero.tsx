@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <div className="bg-[#faf7ff] h-[90vh] flex">
       <div className="flex-1 flex">
-        <div className="flex flex-col justify-center mx-28">
+        <div className="flex flex-col justify-center mx-12 md:mx-28">
           <p className="font-extrabold text-[4.25rem] text-[#29233c] whitespace-nowrap">USD Coin</p>
           <p className="text-[1.55rem] text-gray-500 w-[492px]">The most <b>regulated</b> and <b>fully-reserved</b> digital dollar.</p>
           <div className="flex items-center mt-3">
@@ -22,7 +22,7 @@ export default function Hero() {
         </div>
         
       </div>
-      <div className="flex-1 flex flex-col justify-center items-center">
+      <div className="flex-1 flex-col justify-center items-center flex">
         <div className="pr-20 flex flex-col items-center justify-center">
         <Image src={HeroLogo} alt="Hero Logo" width={500} height={300} objectFit="contain" className="opacity-75" />
         </div>
