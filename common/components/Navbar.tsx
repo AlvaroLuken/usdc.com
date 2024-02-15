@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
 <div className="navbar py-3 gradient-gumdrop-frosting sticky">
-  <div className="navbar-start ml-4 md:ml-24">
+  <div className="navbar-start ml-0 md:ml-24">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <Link href="/" className="hover:cursor-pointer">
