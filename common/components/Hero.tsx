@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="bg-[rgb(250,247,255)] flex mt-12 md:mt-20">
+    <div className="bg-[rgb(250,247,255)] flex mt-20">
       <div className="flex-1 flex">
         <div className="flex flex-col justify-center mx-4 md:mx-28 items-center md:items-start">
           <p className="font-extrabold text-[4.25rem] text-[#29233c] whitespace-nowrap text-center">USD Coin</p>
