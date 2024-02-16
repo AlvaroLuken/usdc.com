@@ -1,6 +1,5 @@
-import Image from "next/image";
+"use client";
 import Hero from "@common/components/Hero";
-import Navbar from "@common/components/Navbar";
 
 export default function Home() {
   return (

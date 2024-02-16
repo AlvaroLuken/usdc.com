@@ -1,7 +1,6 @@
 import Image from "next/image";
 import CircleLogo from "@public/circle-logo.svg";
 import HeroLogo from "@public/USDC_Logo.svg";
-
 export default function WhyUSDC() {
   return (
     <div className="bg-[#faf7ff] h-[90vh] flex">
@@ -12,7 +11,7 @@ export default function WhyUSDC() {
           <div className="flex items-center mt-3">
             <p className="text-[1.75rem] text-gray-500 whitespace-nowrap font-extralight">powered by</p>
             <a href="https://www.circle.com/" className="hover:cursor-pointer" target="_blank">
-            <Image className="ml-1.5 mt-1" src={CircleLogo} alt="Circle Logo" width={116} height={120} objectFit="contain" />
+              <Image className="ml-1.5 mt-1" src={CircleLogo} alt="Circle Logo" width={116} height={120} objectFit="contain" />
             </a>
           </div>
           <div className="flex mt-6 gap-4">
@@ -20,11 +19,11 @@ export default function WhyUSDC() {
             <button className="btn btn-outline text-[1rem] rounded text-black hover:bg-[#363049] hover:text-white">Contact Sales</button>
           </div>
         </div>
-        
+
       </div>
       <div className="flex-1 flex flex-col justify-center items-center">
         <div className="pr-20 flex flex-col items-center justify-center">
-        <Image src={HeroLogo} alt="Hero Logo" width={500} height={300} objectFit="contain" className="opacity-75" />
+          <Image src={HeroLogo} alt="Hero Logo" width={500} height={300} objectFit="contain" className="opacity-75" />
         </div>
       </div>
     </div>

@@ -1,8 +1,10 @@
+"use client";
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@common/components/Navbar";
+import { AuthProvider } from "@common/auth/AuthProvider";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "USDC: powered by Circle",
 };
 
@@ -13,10 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-      <Navbar />
-      {children}
-      </body>
+      <AuthProvider>
+        <body>
+          <Navbar />
+          {children}
+        </body>
+      </AuthProvider>
     </html>
   );
 }
