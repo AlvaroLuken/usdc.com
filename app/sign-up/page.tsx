@@ -55,11 +55,11 @@ export default function SignupForm() {
             {isLoading ? (
                 <Loader />
             ) : (
-                <div className="flex flex-col items-center justify-center h-screen bg-gray-100 font-mono">
+                <div className="flex flex-col items-center justify-center h-screen bg-[#f9f7ff] font-mono">
                     <div className="w-full max-w-sm">
                         <form
                             className="bg-white rounded px-8 pt-6 pb-8 mb-24 font-mono"
-                            onSubmit={(e) => handleSignup(e)}
+                            onSubmit={() => handleSignup()}
                         >
                             <label
                                 className="block text-center text-[#29233c] font-bold mb-4 text-xl"

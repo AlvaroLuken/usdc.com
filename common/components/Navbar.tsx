@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { useAuth } from "@common/auth/AuthProvider";
 import { usePathname, useRouter } from "next/navigation";
-import { AvatarGenerator } from "random-avatar-generator";
 import { useEffect, useState } from "react";
 import USDCLogo from "@public/usdc_logo_on_white.svg";
 import Image from "next/image";
@@ -13,7 +12,6 @@ export default function Navbar() {
   const { user, logout } = useAuth();
   const [, setError] = useState<string | null>(null);
   const router = useRouter();
-  const generator = new AvatarGenerator();
 
   function handleLogout() {
     try {
@@ -70,7 +68,7 @@ export default function Navbar() {
       </div>
       <div className="navbar-center hidden lg:flex">
         {/* DESKTOP NAV */}
-        <ul className="menu menu-horizontal px-1 text-[#29233b]">
+        <ul className="menu menu-horizontal px-1 text-[#29233b] text-[1rem]">
           <li onClick={() => router.push('/why-usdc/')}><Link href="/why-usdc/"><b>Why USDC?</b></Link></li>
           <li onClick={() => router.push('/ecosystem/')}><Link href="/ecosystem/"><b>Ecosystem</b></Link></li>
           <li>
@@ -96,10 +94,23 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="navbar-end mr-0 md:mr-24">
-        {user?.isLoggedIn ? <img className="w-16 pb-2" src={generator.generateRandomAvatar('avatar')} alt="avatar" />
-          : <div className="navbar-end mr-4 md:mr-24 gap-x-1.5">
-            <button className="btn btn-ghost text-black">Sign In</button>
-            <button className="btn btn-active bg-[#363049] rounded text-white hover:bg-white hover:text-black">SIGN UP</button>
+        {user?.isLoggedIn ?
+          <div className="dropdown dropdown-hover dropdown-bottom dropdown-end hover:cursor-pointer">
+            <div className="avatar placeholder mt-1">
+              <div className="bg-neutral text-neutral-content rounded-full w-14">
+                {/* <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" /> */}
+                <span className="text-3xl">{user.username}</span>
+              </div>
+            </div>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>My Profile</a></li>
+              <li onClick={handleLogout}><a>Log Out</a></li>
+            </ul>
+          </div>
+          :
+          <div className="navbar-end mr-4 md:mr-24 flex gap-2">
+            <button onClick={() => router.push('/login/')} className="btn btn-ghost text-black text-[1rem]">Login</button>
+            <button onClick={() => router.push('/sign-up/')} className="btn btn-active bg-[#363049] rounded text-white hover:bg-white hover:text-black">SIGN UP</button>
           </div>}
       </div>
     </div>
