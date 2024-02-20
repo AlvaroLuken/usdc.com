@@ -30,13 +30,13 @@ export default function Navbar() {
   }
 
   return (
-    <div className="navbar gradient-gumdrop-frosting sticky font-mono">
-      <div className="navbar-start ml-0 md:ml-24">
+    <div className="navbar gradient-gumdrop-frosting sticky font-mono flex justify-between">
+      <div className="navbar-start pl-0 md:pl-24">
+        {/* MOBILE NAV */}
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#29233b]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
           </div>
-          {/* MOBILE NAV */}
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-[#29233b]">
             <li onClick={() => router.push('/why-usdc/')}><Link href="/why-usdc/"><b>Why USDC?</b></Link></li>
             <li onClick={() => router.push('/ecosystem/')}><Link href="/ecosystem/"><b>Ecosystem</b></Link></li>
@@ -63,7 +63,7 @@ export default function Navbar() {
           </ul>
         </div>
         <Link href="/" className="hover:cursor-pointer hidden md:flex">
-          <Image src={USDCLogo} alt="Nav Logo" width={200} height={100} className="w-auto h-12" />
+          <Image src={USDCLogo} alt="Nav Logo" width={100} height={100} className="w-auto h-12" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -93,7 +93,7 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end pr-0 md:pr-24">
         {user?.isLoggedIn ?
           <div className="dropdown dropdown-hover dropdown-bottom dropdown-end hover:cursor-pointer">
             <div className="avatar placeholder mt-1">
@@ -108,7 +108,7 @@ export default function Navbar() {
             </ul>
           </div>
           :
-          <div className="navbar-end mr-4 md:mr-24 flex gap-2">
+          <div className="navbar-end flex gap-2">
             <button onClick={() => router.push('/login/')} className="btn btn-ghost text-black text-[1rem]">Login</button>
             <button onClick={() => router.push('/sign-up/')} className="btn btn-active bg-[#363049] rounded text-white hover:bg-white hover:text-black">SIGN UP</button>
           </div>}
