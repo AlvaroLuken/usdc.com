@@ -93,7 +93,7 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
-      <div className="navbar-end mr-0 md:mr-24">
+      <div className="navbar-end">
         {user?.isLoggedIn ?
           <div className="dropdown dropdown-hover dropdown-bottom dropdown-end hover:cursor-pointer">
             <div className="avatar placeholder mt-1">
