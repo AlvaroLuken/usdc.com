@@ -3,6 +3,7 @@ import { useAuth } from "@common/auth/AuthProvider";
 import Loader from "@common/utils/Loader";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import userbase from "userbase-js";
 import "../globals.css";
 
@@ -23,14 +24,42 @@ export default function SignupForm() {
     async function handleSignup() {
         setIsLoading(true);
 
+        const userId = uuidv4();
+
         try {
-            const response2 = await userbase.signUp({
+            const data1 = { userId: userId };
+
+            const createUserResponse = await fetch("/api/create-user/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data1),
+            });
+
+            const data2 = await createUserResponse.json();
+            console.log(data2);
+
+            const userToken = data2.userToken;
+            const encryptionKey = data2.encryptionKey;
+
+            console.log("User Token: " + userToken);
+            console.log("Encryption Key: " + encryptionKey);
+
+            const initUserWalletResponse = await fetch("/api/init-user-wallet/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data2),
+            });
+
+            const challengeId = await initUserWalletResponse.json();
+
+            console.log("Challenge Id: " + challengeId);
+
+            const requestToUserbase = await userbase.signUp({
                 username,
                 password,
                 rememberMe: "local",
-                email: "client@nyu.edu",
                 profile: {
-                    scwAddress: "0x",
+                    UUID: userId,
                     pk: "0x",
                     v: "1",
                 },
@@ -38,7 +67,7 @@ export default function SignupForm() {
             const userInfo = {
                 username: username,
                 isLoggedIn: true,
-                userId: response2.userId,
+                userId: requestToUserbase.userId,
                 scwAddress: "0x",
             };
 
