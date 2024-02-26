@@ -110,7 +110,7 @@ export default function Navbar() {
             </ul>
           </div>
           :
-          <div className="navbar-end flex gap-2">
+          <div className="navbar-end flex gap-2 mr-2">
             <button onClick={() => router.push('/login/')} className="btn btn-ghost text-black text-[1rem]">Login</button>
             <button onClick={() => router.push('/sign-up/')} className="btn btn-active bg-[#363049] rounded text-white hover:bg-white hover:text-black">SIGN UP</button>
           </div>}
