@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { initiateUserControlledWalletsClient } from "@circle-fin/user-controlled-wallets";
+import { W3SSdk } from '@circle-fin/w3s-pw-web-sdk'
 
 export async function POST(request: NextRequest) {
     const body = await request.json();
@@ -20,6 +21,11 @@ export async function POST(request: NextRequest) {
     if (response.data && response.data.challengeId) {
         challengeId = response.data.challengeId;
     }
+
+    let sdk = new W3SSdk()
+
+    //sdk.setAppSettings()
+
 
     console.log(challengeId);
 

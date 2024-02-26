@@ -8,6 +8,10 @@ const nextConfig = {
                 hostname: 'avataaars.io'
             },
         ]
+    },
+    webpack: config => {
+        config.externals.push('pino-pretty', 'lokijs', 'encoding')
+        return config
     }
 }
 

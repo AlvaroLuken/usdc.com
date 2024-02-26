@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import USDCLogo from "@public/usdc_logo_on_white.svg";
 import Image from "next/image";
 import userbase from "userbase-js";
+import WalletConnectButton from "@common/utils/WalletConnectButton";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -70,6 +71,7 @@ export default function Navbar() {
         {/* DESKTOP NAV */}
         <ul className="menu menu-horizontal px-1 text-[#29233b] text-[1rem]">
           <li onClick={() => router.push('/why-usdc/')}><Link href="/why-usdc/"><b>Why USDC?</b></Link></li>
+          <li onClick={() => router.push('/cctp-bridge/')}><Link href="/cctp-bridge/"><b>CCTP</b></Link></li>
           <li onClick={() => router.push('/ecosystem/')}><Link href="/ecosystem/"><b>Ecosystem</b></Link></li>
           <li>
             <details>
@@ -112,6 +114,7 @@ export default function Navbar() {
             <button onClick={() => router.push('/login/')} className="btn btn-ghost text-black text-[1rem]">Login</button>
             <button onClick={() => router.push('/sign-up/')} className="btn btn-active bg-[#363049] rounded text-white hover:bg-white hover:text-black">SIGN UP</button>
           </div>}
+        <WalletConnectButton />
       </div>
     </div>
   );
