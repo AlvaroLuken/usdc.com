@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html {
+body,
+html {
   background-color: #faf7ff;
+  scroll-behavior: smooth;
 }
 
 .gradient-jelly {

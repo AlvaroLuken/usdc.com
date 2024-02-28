@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   const initialState = cookieToInitialState(config, headers().get('cookie'))
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#faf7ff]">
       <ContextProvider initialState={initialState}>
         <AuthProvider>
           <body>

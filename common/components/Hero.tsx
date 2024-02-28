@@ -12,7 +12,7 @@ export default function Hero() {
           <div className="flex items-center mt-3">
             <p className="text-[1.75rem] text-gray-500 whitespace-nowrap font-extralight">powered by</p>
             <a href="https://www.circle.com/" className="hover:cursor-pointer" target="_blank">
-            <Image className="ml-1.5 mt-1" src={CircleLogo} alt="Circle Logo" width={116} height={120} objectFit="contain" />
+              <Image className="ml-1.5 mt-1" src={CircleLogo} alt="Circle Logo" width={116} height={120} objectFit="contain" />
             </a>
           </div>
           <div className="flex flex-col md:flex-row mt-6 gap-4 w-[80%] md:w-full">
@@ -20,11 +20,11 @@ export default function Hero() {
             <button className="btn btn-outline text-[1rem] rounded text-black hover:bg-[#363049] hover:text-white">Contact Sales</button>
           </div>
         </div>
-        
+
       </div>
       <div className="flex-1 flex-col justify-center items-center md:flex hidden">
         <div className="pr-36 flex flex-col items-center justify-center">
-        <Image src={HeroLogo} alt="Hero Logo" width={500} height={300} objectFit="contain" className="opacity-84" />
+          <Image src={HeroLogo} alt="Hero Logo" width={500} height={300} objectFit="contain" className="opacity-84" />
         </div>
       </div>
     </div>
